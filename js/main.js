@@ -895,7 +895,7 @@
        document.addEventListener('DOMContentLoaded', function() {
         // ========== RESPUESTAS DEL CHATBOT (SIN EMOJIS) ==========
         const respuestas = {
-            duracion: '<i class="fas fa-hourglass-half"></i> El PNFI en Informática tiene una duración de <strong>4 años</strong>, divididos en Trayectos. Al completar el Trayecto II (2 años) obtienes el título de <strong>Técnico Superior Universitario (TSU) en Informática</strong>, y al completar el Trayecto IV (4 años) obtienes el título de <strong>Ingeniero en Informática</strong>.',
+            duracion: '<i class="fas fa-hourglass-half"></i> El PNFI en Informática tiene una duración de <strong>4 años</strong>, divididos en Trayectos. Al completar el Trayecto IV (2 años) obtienes el título de <strong>Técnico Superior Universitario (TSU) en Informática</strong>, y al completar el Trayecto VIII (4 años) obtienes el título de <strong>Ingeniero en Informática</strong>.',
             
             requisitos: '<i class="fas fa-file-alt"></i> Los requisitos generales son:<br>• Título de bachiller<br>• Haber aprobado la OPSU<br>• Documentos: cédula, notas, partida de nacimiento<br>• Completar el proceso de inscripción<br><br><i class="fas fa-info-circle"></i> No se requiere conocimiento previo en programación.',
             
