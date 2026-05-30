@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>UPTP J.J. Montilla - PNFI | Programa Nacional de Formación en Informática</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+     <link rel="stylesheet" href="css/estilos.css">
+    
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Logo UPTP J.J. Montilla" class="logo-icon">
+                <div class="logo-text">
+                    <h1>UPTP J.J. MONTILLA</h1>
+                    <p>Universidad Politécnica Territorial</p>
+                </div>
+            </div>
+
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#pnfi">PNFI</a></li>
+                <li><a href="#projectsShowcase">Proyectos</a></li>
+                <li><a href="#techGalleryUnique">Galería</a></li>
+                <li><a href="#portfolioSection">Portafolio</a></li>
+                <li><a href="#contactSection">Contacto</a></li>
+            </ul>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/prensauptpjjmontilla/" class="social-icon instagram" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@prensa.uptp.jj.mo" class="social-icon tiktok" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://www.youtube.com/@educaciondigital-uptpjjmon6898" class="social-icon youtube" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.facebook.com/juandejesus.montilla.9" class="social-icon facebook" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="carousel-section"  id="inicio">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active" data-index="0">
+                    <video class="slide-video" muted playsinline>
+                        <source src="mp4/video1.mp4" type="video/mp4">
+                    </video>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">Programa Nacional de Formación en Informática</h2>
+                        <p class="slide-description">Formación integral en desarrollo de software, redes y tecnología con enfoque práctico y compromiso social.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide" data-index="1">
+                    <video class="slide-video" muted playsinline>
+                        <source src="mp4/video2.mp4" type="video/mp4">
+                    </video>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">Software Libre y Soberanía Tecnológica</h2>
+                        <p class="slide-description">Formamos profesionales comprometidos con el software libre y el desarrollo de soluciones innovadoras para Venezuela.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide" data-index="2">
+                    <video class="slide-video" muted playsinline>
+                        <source src="mp4/video3.mp4" type="video/mp4">
+                    </video>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">Proyectos con Impacto Comunitario</h2>
+                        <p class="slide-description">Aplica tus conocimientos en proyectos reales que beneficien a tu comunidad con soluciones tecnológicas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flechas laterales -->
+            <div class="carousel-arrow arrow-prev" id="prevArrow">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="carousel-arrow arrow-next" id="nextArrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+
+            <!-- Botón pausa circular -->
+            <button class="pause-btn" id="pauseBtn">
+                <svg class="progress-ring" viewBox="0 0 80 80">
+                    <circle class="progress-ring-circle" cx="40" cy="40" r="35" />
+                </svg>
+                <i class="fas fa-pause" id="pauseIcon"></i>
+            </button>
+        </div>
+    </section>
+
+    
+    <!-- SECCIÓN PNFI - DISEÑO PROFESIONAL CON FONDO DE IMAGEN -->
+    <section class="pnfi-luxury" id="pnfi">
+        
+        <!-- Fondo con imagen profesional -->
+        <div class="pnfi-luxury-bg"></div>
+        
+        <div class="pnfi-luxury-container">
+            
+            <!-- LADO IZQUIERDO: Título y descripción -->
+            <div class="pnfi-luxury-left" id="pnfiLeft">
+                <div class="left-content">
+                    <div class="luxury-badge">PNFI</div>
+                    <h1 class="luxury-title">Programa Nacional de <br><span>Formación en Informática</span></h1>
+                    <div class="luxury-line"></div>
+                    <p class="luxury-description">
+                        El PNFI es un programa de estudios universitarios creado por el gobierno venezolano, 
+                        enmarcado en la Misión Sucre y la Misión Alma Mater. Su objetivo principal es formar 
+                        profesionales en el área de informática con un alto compromiso social, preparados para 
+                        contribuir al desarrollo tecnológico y a la soberanía tecnológica del país.
+                    </p>
+                    <div class="luxury-stats">
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Años de formación</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Títulos obtenidos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Software Libre</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- LADO DERECHO: Carrusel de imágenes seleccionable -->
+            <div class="pnfi-luxury-right" id="pnfiRight">
+                <div class="image-carousel">
+                    
+                    <!-- Imagen principal -->
+                    <div class="carousel-main-image" id="mainImageContainer">
+                        <img id="mainImage" src="https://i.pinimg.com/1200x/41/2e/a7/412ea792b6963690a4a9dce67b73f216.jpg" alt="Main">
+                        <div class="image-caption" id="imageCaption">
+                            <h3>Desarrollo de Software</h3>
+                            <p>Formación en lenguajes modernos y metodologías ágiles</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Miniaturas seleccionables -->
+                    <div class="carousel-thumbnails" id="thumbnailsContainer">
+                        <div class="thumbnail active" data-image="https://i.pinimg.com/1200x/41/2e/a7/412ea792b6963690a4a9dce67b73f216.jpg" data-title="Desarrollo de Software" data-desc="Formación en lenguajes modernos y metodologías ágiles con enfoque en software libre.">
+                            <img src="https://i.pinimg.com/1200x/41/2e/a7/412ea792b6963690a4a9dce67b73f216.jpg" alt="Software">
+                            <div class="thumbnail-overlay">
+                                <span>Software</span>
+                            </div>
+                        </div>
+                        <div class="thumbnail" data-image="https://i.pinimg.com/736x/98/d5/49/98d549f3ff77bc01218df66bd3914eb1.jpg" data-title="Redes y Telecomunicaciones" data-desc="Administración de redes, seguridad informática y conectividad para entornos empresariales.">
+                            <img src="https://i.pinimg.com/736x/98/d5/49/98d549f3ff77bc01218df66bd3914eb1.jpg" alt="Redes">
+                            <div class="thumbnail-overlay">
+                                <span>Redes</span>
+                            </div>
+                        </div>
+                        <div class="thumbnail" data-image="https://i.pinimg.com/736x/39/ee/cb/39eecbeca86920e153e277780f20feed.jpg" data-title="Proyectos Socio-tecnológicos" data-desc="Aplicación del conocimiento en comunidades, generando impacto social y tecnológico.">
+                            <img src="https://i.pinimg.com/736x/39/ee/cb/39eecbeca86920e153e277780f20feed.jpg" alt="Proyectos">
+                            <div class="thumbnail-overlay">
+                                <span>Proyectos</span>
+                            </div>
+                        </div>
+                        <div class="thumbnail" data-image="https://i.pinimg.com/736x/86/7e/2c/867e2cf2156873ec3d7a26c0e0791699.jpg" data-title="Soberanía Tecnológica" data-desc="Compromiso con el software libre y el desarrollo de soluciones innovadoras para Venezuela.">
+                            <img src="https://i.pinimg.com/736x/86/7e/2c/867e2cf2156873ec3d7a26c0e0791699.jpg" alt="Soberanía">
+                            <div class="thumbnail-overlay">
+                                <span>Tecnología</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Controles de navegación -->
+                    <div class="carousel-controls-luxury">
+                        <button class="carousel-control-luxury prev-control" id="prevImage">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <button class="carousel-control-luxury next-control" id="nextImage">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== SECCIÓN PROYECTOS - PORTAADA + 3 VIDEOS HORIZONTALES ========== -->
+    <section class="projects-showcase" id="projectsShowcase">
+        
+        <!-- ========== PORTAADA ========== -->
+        <div class="projects-hero" id="projectsHero">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge">PNFI</div>
+                <h1 class="hero-title">Proyectos</h1>
+                <div class="hero-line"></div>
+                <p class="hero-description">Descubre todo lo que aprenderás durante tu formación en el Programa Nacional de Formación en Informática</p>
+                <div class="hero-arrow" id="scrollArrow">
+                    <i class="fas fa-chevron-down"></i>
+                    <span>Explorar</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== 3 VIDEOS HORIZONTALES ========== -->
+        <div class="projects-grid" id="projectsGrid">
+            
+            <!-- Video 1 - Desarrollo de Software -->
+            <div class="project-card" id="project1">
+                <div class="card-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="mp4/video4.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <div class="card-number">01</div>
+                        <h3 class="card-title">Desarrollo de <span>Software</span></h3>
+                        <div class="card-line"></div>
+                        <p class="card-text">Aprende a crear aplicaciones web, móviles y de escritorio con lenguajes modernos como Python, Java y JavaScript.</p>
+                        <div class="card-skills">
+                            <span>React</span>
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video 2 - Bases de Datos -->
+            <div class="project-card" id="project2">
+                <div class="card-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="mp4/video5.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <div class="card-number">02</div>
+                        <h3 class="card-title">Bases de <span>Datos</span></h3>
+                        <div class="card-line"></div>
+                        <p class="card-text">Diseña, administra y optimiza bases de datos SQL y NoSQL para proyectos empresariales y de gran escala.</p>
+                        <div class="card-skills">
+                            <span>MySQL</span>
+                            <span>PostgreSQL</span>
+                            <span>MongoDB</span>
+                            <span>Redis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video 3 - Redes y Seguridad -->
+            <div class="project-card" id="project3">
+                <div class="card-video">
+                    <video autoplay muted loop playsinline>
+                        <source src="mp4/video6.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <div class="card-number">03</div>
+                        <h3 class="card-title">Redes y <span>Seguridad</span></h3>
+                        <div class="card-line"></div>
+                        <p class="card-text">Configura y administra redes, implementa políticas de seguridad y protege sistemas contra amenazas.</p>
+                        <div class="card-skills">
+                            <span>TCP/IP</span>
+                            <span>Firewall</span>
+                            <span>Ethical Hacking</span>
+                            <span>Ciberseguridad</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECCIÓN GALERÍA DE TECNOLOGÍAS (NOMBRES ÚNICOS) ========== -->
+    <section class="tech-gallery-unique" id="techGalleryUnique">
+        
+        <!-- ========== PORTAADA ========== -->
+        <div class="gallery-portada-unique" id="galleryPortadaUnique">
+            <div class="portada-bg-unique"></div>
+            <div class="portada-overlay-unique"></div>
+            <div class="portada-content-unique">
+                <div class="portada-badge-unique">TECNOLOGÍAS</div>
+                <h1 class="portada-title-unique">Galería de <span>Tecnologías Informáticas</span></h1>
+                <div class="portada-line-unique"></div>
+                <p class="portada-description-unique">Descubre las herramientas y lenguajes que dominarás durante tu formación en el Programa Nacional de Formación en Informática</p>
+                <div class="portada-arrow-unique" id="portadaArrowUnique">
+                    <i class="fas fa-chevron-down"></i>
+                    <span>Explorar</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== BLOQUE 1: Izquierda 1 | Derecha 3 ========== -->
+        <div class="gallery-block-unique block-1-unique" id="block1TechUnique">
+            <div class="block-1-left-unique">
+                <div class="tech-card-square-unique tech-card-large-square-unique">
+                    <div class="card-bg-unique">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&h=700&fit=crop" alt="Bases de Datos">
+                    </div>
+                    <div class="card-overlay-unique"></div>
+                    <div class="card-content-unique">
+                        <div class="card-icon-unique"><i class="fas fa-database"></i></div>
+                        <h3>Bases de Datos</h3>
+                        <p>MySQL, PostgreSQL, MongoDB - Diseño, administración y optimización de bases de datos</p>
+                        <div class="card-tags-unique">
+                            <span>SQL</span>
+                            <span>NoSQL</span>
+                            <span>Optimización</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-1-right-unique">
+                <div class="right-top-unique">
+                    <div class="tech-card-square-unique tech-card-small-square-unique">
+                        <div class="card-bg-unique">
+                            <img src="https://images.unsplash.com/photo-1623479322729-28b25c16b011?w=400&h=300&fit=crop" alt="HTML/CSS/JS">
+                        </div>
+                        <div class="card-overlay-unique"></div>
+                        <div class="card-content-unique">
+                            <div class="card-icon-unique"><i class="fab fa-html5"></i></div>
+                            <h4>Frontend</h4>
+                            <p>HTML5, CSS3, JavaScript, React, Vue.js</p>
+                        </div>
+                    </div>
+                    <div class="tech-card-square-unique tech-card-small-square-unique">
+                        <div class="card-bg-unique">
+                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400&h=300&fit=crop" alt="Backend">
+                        </div>
+                        <div class="card-overlay-unique"></div>
+                        <div class="card-content-unique">
+                            <div class="card-icon-unique"><i class="fab fa-python"></i></div>
+                            <h4>Backend</h4>
+                            <p>Python, Java, PHP, Node.js, APIs REST</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-bottom-unique">
+                    <div class="tech-card-square-unique tech-card-medium-square-unique">
+                        <div class="card-bg-unique">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=300&fit=crop" alt="Full Stack">
+                        </div>
+                        <div class="card-overlay-unique"></div>
+                        <div class="card-content-unique">
+                            <div class="card-icon-unique"><i class="fas fa-code-branch"></i></div>
+                            <h4>Desarrollo Full Stack</h4>
+                            <p>Integración de frontend, backend y bases de datos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== BLOQUE 2: 3 imágenes horizontales ========== -->
+        <div class="gallery-block-unique block-2-unique" id="block2TechUnique">
+            <div class="tech-card-square-unique tech-card-horizontal-square-unique">
+                <div class="card-bg-unique">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=500&h=400&fit=crop" alt="Redes">
+                </div>
+                <div class="card-overlay-unique"></div>
+                <div class="card-content-unique">
+                    <div class="card-icon-unique"><i class="fas fa-network-wired"></i></div>
+                    <h4>Redes y Conectividad</h4>
+                    <p>Routers, switches, TCP/IP, DNS, DHCP</p>
+                </div>
+            </div>
+            <div class="tech-card-square-unique tech-card-horizontal-square-unique">
+                <div class="card-bg-unique">
+                    <img src="https://i.pinimg.com/736x/1b/c5/bb/1bc5bb9a519197cf43ea31bf2a7dcd8d.jpg" alt="Seguridad">
+                </div>
+                <div class="card-overlay-unique"></div>
+                <div class="card-content-unique">
+                    <div class="card-icon-unique"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Seguridad Informática</h4>
+                    <p>Ciberseguridad, ethical hacking, firewalls</p>
+                </div>
+            </div>
+            <div class="tech-card-square-unique tech-card-horizontal-square-unique">
+                <div class="card-bg-unique">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=400&fit=crop" alt="Cloud">
+                </div>
+                <div class="card-overlay-unique"></div>
+                <div class="card-content-unique">
+                    <div class="card-icon-unique"><i class="fas fa-cloud"></i></div>
+                    <h4>Cloud Computing</h4>
+                    <p>AWS, Azure, despliegue escalable</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== BLOQUE 3: CARRUSEL PROFESIONAL ========== -->
+        <div class="gallery-block-unique block-3-unique" id="block3TechUnique">
+            <h3 class="carousel-title-unique">Lenguajes y Tecnologías</h3>
+            <div class="carousel-tech-wrapper-unique">
+                <div class="carousel-tech-container-unique" id="carouselTechContainerUnique">
+                    <div class="carousel-tech-track-unique" id="carouselTechTrackUnique">
+                        <div class="carousel-tech-slide-unique">
+                            <img src="https://images.unsplash.com/photo-1623479322729-28b25c16b011?w=400&h=300&fit=crop" alt="HTML5">
+                            <div class="slide-tech-info-unique">
+                                <h4>HTML5</h4>
+                                <p>Estructura web semántica</p>
+                            </div>
+                        </div>
+                        <div class="carousel-tech-slide-unique">
+                            <img src="https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?w=400&h=300&fit=crop" alt="CSS3">
+                            <div class="slide-tech-info-unique">
+                                <h4>CSS3</h4>
+                                <p>Diseño y animaciones modernas</p>
+                            </div>
+                        </div>
+                        <div class="carousel-tech-slide-unique">
+                            <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?w=400&h=300&fit=crop" alt="JavaScript">
+                            <div class="slide-tech-info-unique">
+                                <h4>JavaScript</h4>
+                                <p>Interactividad y dinamismo</p>
+                            </div>
+                        </div>
+                        <div class="carousel-tech-slide-unique">
+                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=400&h=300&fit=crop" alt="PHP">
+                            <div class="slide-tech-info-unique">
+                                <h4>PHP</h4>
+                                <p>Backend dinámico</p>
+                            </div>
+                        </div>
+                        <div class="carousel-tech-slide-unique">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop" alt="Python">
+                            <div class="slide-tech-info-unique">
+                                <h4>Python</h4>
+                                <p>Versátil y potente</p>
+                            </div>
+                        </div>
+                        <div class="carousel-tech-slide-unique">
+                            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400&h=300&fit=crop" alt="SQL">
+                            <div class="slide-tech-info-unique">
+                                <h4>SQL</h4>
+                                <p>Gestión de datos</p>
+                            </div>
+                        </div>
+                        <div class="carousel-tech-slide-unique">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop" alt="React">
+                            <div class="slide-tech-info-unique">
+                                <h4>React</h4>
+                                <p>Biblioteca frontend</p>
+                            </div>
+                        </div>
+                        <div class="carousel-tech-slide-unique">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=300&fit=crop" alt="Node.js">
+                            <div class="slide-tech-info-unique">
+                                <h4>Node.js</h4>
+                                <p>JavaScript en servidor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-tech-prev-unique" id="carouselTechPrevUnique"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-tech-next-unique" id="carouselTechNextUnique"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-tech-dots-unique" id="carouselTechDotsUnique"></div>
+            </div>
+            <p class="carousel-tech-description-unique">Explora las tecnologías que dominarás durante tu formación profesional</p>
+        </div>
+        
+        <!-- ========== BLOQUE 4: 3 partes (pequeña + grande + doble) ========== -->
+        <div class="gallery-block-unique block-4-unique" id="block4TechUnique">
+            <div class="block-4-small-unique">
+                <div class="tech-card-square-unique tech-card-full-square-unique">
+                    <div class="card-bg-unique">
+                        <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&h=500&fit=crop" alt="Git">
+                    </div>
+                    <div class="card-overlay-unique"></div>
+                    <div class="card-content-unique">
+                        <div class="card-icon-unique"><i class="fab fa-git-alt"></i></div>
+                        <h4>Control de Versiones</h4>
+                        <p>Git y GitHub para trabajo colaborativo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="block-4-large-unique">
+                <div class="tech-card-square-unique tech-card-full-square-unique">
+                    <div class="card-bg-unique">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=500&fit=crop" alt="Data Science">
+                    </div>
+                    <div class="card-overlay-unique"></div>
+                    <div class="card-content-unique">
+                        <div class="card-icon-unique"><i class="fas fa-chart-line"></i></div>
+                        <h4>Ciencia de Datos</h4>
+                        <p>Análisis de datos, visualización, machine learning</p>
+                        <div class="card-tags-unique">
+                            <span>Pandas</span>
+                            <span>NumPy</span>
+                            <span>Matplotlib</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block-4-double-unique">
+                <div class="double-top-unique">
+                    <div class="tech-card-square-unique tech-card-vertical-square-unique">
+                        <div class="card-bg-unique">
+                            <img src="https://cdn-icons-png.flaticon.com/512/518/518713.png" alt="Linux">
+                        </div>
+                        <div class="card-overlay-unique"></div>
+                        <div class="card-content-unique">
+                            <div class="card-icon-unique"><i class="fab fa-linux"></i></div>
+                            <h4>Linux</h4>
+                            <p>Administración de servidores</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="double-bottom-unique">
+                    <div class="tech-card-square-unique tech-card-vertical-square-unique">
+                        <div class="card-bg-unique">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=240&fit=crop" alt="DevOps">
+                        </div>
+                        <div class="card-overlay-unique"></div>
+                        <div class="card-content-unique">
+                            <div class="card-icon-unique"><i class="fas fa-rocket"></i></div>
+                            <h4>DevOps</h4>
+                            <p>CI/CD, Docker, despliegue continuo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ========== BLOQUE 5: 2 partes (izquierda: 2 verticales | derecha: 1 grande) ========== -->
+        <div class="gallery-block-unique block-5-unique" id="block5TechUnique">
+            <div class="block-5-left-unique">
+                <div class="tech-card-square-unique tech-card-vertical-large-unique">
+                    <div class="card-bg-unique">
+                        <img src="https://images.unsplash.com/photo-1502943693086-33b5b1cfdf2f?w=500&h=280&fit=crop" alt="Metodologías Ágiles">
+                    </div>
+                    <div class="card-overlay-unique"></div>
+                    <div class="card-content-unique">
+                        <div class="card-icon-unique"><i class="fas fa-users"></i></div>
+                        <h4>Metodologías Ágiles</h4>
+                        <p>Scrum, Kanban, trabajo en equipo</p>
+                    </div>
+                </div>
+                <div class="tech-card-square-unique tech-card-vertical-large-unique">
+                    <div class="card-bg-unique">
+                        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=500&h=280&fit=crop" alt="Testing">
+                    </div>
+                    <div class="card-overlay-unique"></div>
+                    <div class="card-content-unique">
+                        <div class="card-icon-unique"><i class="fas fa-vial"></i></div>
+                        <h4>Pruebas de Software</h4>
+                        <p>Unit testing, integración continua, QA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="block-5-right-unique">
+                <div class="tech-card-square-unique tech-card-huge-square-unique">
+                    <div class="card-bg-unique">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=700&h=600&fit=crop" alt="Programación">
+                    </div>
+                    <div class="card-overlay-unique"></div>
+                    <div class="card-content-unique">
+                        <div class="card-icon-unique"><i class="fas fa-laptop-code"></i></div>
+                        <h4>Programación</h4>
+                        <p>Lógica de programación, algoritmos, estructuras de datos</p>
+                        <div class="card-tags-unique">
+                            <span>Algoritmos</span>
+                            <span>Estructuras</span>
+                            <span>Optimización</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ========== SECCIÓN PORTAFOLIO - FULL WIDTH CON TEXTO CENTRAL ========== -->
+<section class="portfolio-full-section" id="portfolioSection">
+    
+    <!-- ========== PORTAADA DEL PORTAFOLIO ========== -->
+    <div class="portfolio-full-hero" id="portfolioHero">
+        <div class="portfolio-full-hero-bg"></div>
+        <div class="portfolio-full-hero-overlay"></div>
+        <div class="portfolio-full-hero-content">
+            <div class="portfolio-full-hero-badge">PORTAFOLIO</div>
+            <h1 class="portfolio-full-hero-title">Nuestros <span>Proyectos</span></h1>
+            <div class="portfolio-full-hero-line"></div>
+            <p class="portfolio-full-hero-description">
+                Conoce los proyectos institucionales que forman parte de nuestra trayectoria educativa y tecnológica
+            </p>
+            <div class="portfolio-full-hero-arrow" id="portfolioScrollArrow">
+                <i class="fas fa-chevron-down"></i>
+                <span>Explorar</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ========== FILA SUPERIOR - 3 TARJETAS ========== -->
+    <div class="portfolio-full-grid-top">
+        <div class="portfolio-full-grid" id="portfolioGridTop">
+            
+            <!-- Tarjeta 1 - Recursos Humanos -->
+            <div class="portfolio-full-card border-yellow" data-category="rrhh">
+                <div class="portfolio-full-card-bg">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&h=600&fit=crop" alt="Recursos Humanos">
+                </div>
+                <div class="portfolio-full-card-overlay"></div>
+                <div class="portfolio-full-card-content">
+                    <div class="portfolio-full-card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="portfolio-full-card-title">Recursos<br><span>Humanos</span></h3>
+                    <div class="portfolio-full-card-line"></div>
+                    <p class="portfolio-full-card-description">
+                        Plataforma integral para gestión de personal, nómina, evaluaciones y reclutamiento.
+                    </p>
+                    <div class="portfolio-full-card-tags">
+                        <span>RRHH</span>
+                        <span>Nómina</span>
+                        <span>Personal</span>
+                    </div>
+                    <a href="index_kamila.html" class="portfolio-full-btn" data-project="rrhh">
+                        <span>Ver Proyecto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 2 - Nupilca -->
+            <div class="portfolio-full-card border-yellow" data-category="nupilca">
+                <div class="portfolio-full-card-bg">
+                    <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800&h=600&fit=crop" alt="Nupilca">
+                </div>
+                <div class="portfolio-full-card-overlay"></div>
+                <div class="portfolio-full-card-content">
+                    <div class="portfolio-full-card-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="portfolio-full-card-title">Nupilca</h3>
+                    <div class="portfolio-full-card-line"></div>
+                    <p class="portfolio-full-card-description">
+                        Sistema de control de producción, inventario y logística para empresas industriales.
+                    </p>
+                    <div class="portfolio-full-card-tags">
+                        <span>Producción</span>
+                        <span>Inventario</span>
+                        <span>Logística</span>
+                    </div>
+                    <a href="https://acreditables-jbsgp4o1x-saltoangels-projects.vercel.app/#materia" class="portfolio-full-btn" data-project="nupilca">
+                        <span>Ver Proyecto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Tarjeta 3 - Biblioteca -->
+            <div class="portfolio-full-card border-yellow" data-category="biblioteca">
+                <div class="portfolio-full-card-bg">
+                    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=800&h=600&fit=crop" alt="Biblioteca">
+                </div>
+                <div class="portfolio-full-card-overlay"></div>
+                <div class="portfolio-full-card-content">
+                    <div class="portfolio-full-card-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="portfolio-full-card-title">Biblioteca</h3>
+                    <div class="portfolio-full-card-line"></div>
+                    <p class="portfolio-full-card-description">
+                        Sistema de gestión bibliotecaria con préstamos, catálogo digital y reservas en línea.
+                    </p>
+                    <div class="portfolio-full-card-tags">
+                        <span>Préstamos</span>
+                        <span>Catálogo</span>
+                        <span>Digital</span>
+                    </div>
+                    <a href="https://williannieves.github.io/tarea-maripili/" class="portfolio-full-btn" data-project="biblioteca">
+                        <span>Ver Proyecto</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- ========== FILA INFERIOR - 2 TARJETAS CON TEXTO CENTRAL ========== -->
+    <div class="portfolio-full-bottom-row">
+        
+        <!-- Tarjeta 4 - Veterinaria Inamoll (IZQUIERDA) -->
+        <div class="portfolio-full-card-half border-red" data-category="veterinaria">
+            <div class="portfolio-full-card-bg">
+                <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800&h=600&fit=crop" alt="Veterinaria Inamoll">
+            </div>
+            <div class="portfolio-full-card-overlay"></div>
+            <div class="portfolio-full-card-content">
+                <div class="portfolio-full-card-icon">
+                    <i class="fas fa-paw"></i>
+                </div>
+                <h3 class="portfolio-full-card-title">Veterinaria<br></h3>
+                <div class="portfolio-full-card-line"></div>
+                <p class="portfolio-full-card-description">
+                    Sistema de gestión veterinaria para control de pacientes, citas, historiales médicos y farmacia.
+                </p>
+                <div class="portfolio-full-card-tags">
+                    <span>Gestión</span>
+                    <span>Veterinaria</span>
+                    <span>Pacientes</span>
+                </div>
+                <a href="https://pnfi.vercel.app/portafolio/dist/index.html" class="portfolio-full-btn" data-project="veterinaria">
+                    <span>Ver Proyecto</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- ========== TEXTO CENTRAL HERMOSO ========== -->
+        <div class="portfolio-center-text">
+            <div class="center-text-content">
+                <div class="center-icon">
+                    <i class="fas fa-star-of-life"></i>
+                </div>
+                <h2 class="center-title">Innovación y<br><span>Tecnología</span></h2>
+                <div class="center-line"></div>
+                <p class="center-description">
+                    Soluciones digitales diseñadas para transformar<br>
+                    la gestión de tu negocio con tecnología de vanguardia.
+                </p>
+                <div class="center-stats">
+                    <div class="center-stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Proyectos Activos</span>
+                    </div>
+                    <div class="center-stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Satisfacción</span>
+                    </div>
+                </div>
+                <div class="center-decoration">
+                    <i class="fas fa-code"></i>
+                    <i class="fas fa-database"></i>
+                    <i class="fas fa-cloud"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tarjeta 5 - Inamolca (DERECHA) -->
+        <div class="portfolio-full-card-half border-red" data-category="inamolca">
+            <div class="portfolio-full-card-bg">
+                <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&h=600&fit=crop" alt="Inamolca - Sistema Agrícola">
+            </div>
+            <div class="portfolio-full-card-overlay"></div>
+            <div class="portfolio-full-card-content">
+                <div class="portfolio-full-card-icon">
+                    <i class="fas fa-tractor"></i>
+                </div>
+                <h3 class="portfolio-full-card-title">Inamolca</h3>
+                <div class="portfolio-full-card-line"></div>
+                <p class="portfolio-full-card-description">
+                    Sistema agrícola completo con gestión de cultivos, riego, cosechas, inventario agrícola y mantenimiento de maquinaria.
+                </p>
+                <div class="portfolio-full-card-tags">
+                    <span>Agricultura</span>
+                    <span>Cultivos</span>
+                    <span>Mantenimiento</span>
+                    <span>Riego</span>
+                </div>
+                <a href="index_inamolca.html" class="portfolio-full-btn" data-project="inamolca">
+                    <span>Ver Proyecto</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<style>
+/* ========== SECCIÓN PORTAFOLIO FULL WIDTH ========== */
+.portfolio-full-section {
+    width: 100%;
+    position: relative;
+    background: #05050A;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.portfolio-full-section.visible-portfolio {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========== PORTAADA FULL WIDTH ========== */
+.portfolio-full-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio-full-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1920&h=1080&fit=crop') center/cover no-repeat;
+    animation: portfolioFullHeroZoom 20s ease-out infinite alternate;
+}
+
+@keyframes portfolioFullHeroZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+}
+
+.portfolio-full-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.85) 100%);
+}
+
+.portfolio-full-hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    width: 90%;
+    max-width: 900px;
+    opacity: 0;
+}
+
+.portfolio-full-hero.animate-portfolio .portfolio-full-hero-content {
+    animation: portfolioFullFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes portfolioFullFadeIn {
+    0% { opacity: 0; transform: translate(-50%, -40%); }
+    100% { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.portfolio-full-hero-badge {
+    display: inline-block;
+    background: rgba(211, 47, 47, 0.25);
+    border: 1px solid #D32F2F;
+    padding: 8px 28px;
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: #D32F2F;
+    margin-bottom: 30px;
+    backdrop-filter: blur(4px);
+}
+
+.portfolio-full-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.portfolio-full-hero-title span {
+    color: #D32F2F;
+}
+
+.portfolio-full-hero-line {
+    width: 100px;
+    height: 3px;
+    background: #D32F2F;
+    margin: 0 auto 25px;
+}
+
+.portfolio-full-hero-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.85);
+}
+
+.portfolio-full-hero-arrow {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.portfolio-full-hero.animate-portfolio .portfolio-full-hero-arrow {
+    animation: portfolioFullArrowFadeIn 0.6s ease 0.8s forwards, bounceArrowFull 2s ease 1.4s infinite;
+}
+
+@keyframes portfolioFullArrowFadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes bounceArrowFull {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(12px); }
+}
+
+.portfolio-full-hero-arrow i {
+    font-size: 1.3rem;
+    color: white;
+}
+
+.portfolio-full-hero-arrow span {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ========== FILA SUPERIOR - 3 TARJETAS ========== */
+.portfolio-full-grid-top {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio-full-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* ========== FILA INFERIOR - 2 TARJETAS CON TEXTO CENTRAL ========== */
+.portfolio-full-bottom-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.portfolio-full-card-half {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 550px;
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+/* Tarjeta izquierda */
+.portfolio-full-card-half:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Tarjeta derecha */
+.portfolio-full-card-half:last-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ========== TEXTO CENTRAL HERMOSO ========== */
+.portfolio-center-text {
+    background: linear-gradient(135deg, #0a0a12, #0d0d18);
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    border-left: 1px solid rgba(231, 76, 60, 0.2);
+    border-right: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.portfolio-center-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #E74C3C, #F1C40F, #E74C3C);
+    animation: centerLineGlow 3s ease-in-out infinite;
+}
+
+@keyframes centerLineGlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.portfolio-center-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #E74C3C, #F1C40F, #E74C3C);
+    animation: centerLineGlow 3s ease-in-out infinite;
+}
+
+.center-text-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: centerTextFadeIn 0.8s ease 0.5s forwards;
+}
+
+@keyframes centerTextFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.center-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.2), rgba(241, 196, 15, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(231, 76, 60, 0);
+    }
+}
+
+.center-icon i {
+    font-size: 2rem;
+    color: #E74C3C;
+    animation: iconRotate 4s ease-in-out infinite;
+}
+
+@keyframes iconRotate {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.center-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.center-title span {
+    color: #E74C3C;
+    background: linear-gradient(135deg, #E74C3C, #F1C40F);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.center-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #E74C3C, #F1C40F);
+    margin: 0 auto 20px;
+    border-radius: 3px;
+    animation: lineWidthPulse 2s ease-in-out infinite;
+}
+
+@keyframes lineWidthPulse {
+    0%, 100% { width: 60px; }
+    50% { width: 100px; }
+}
+
+.center-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
+
+.center-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.center-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center-stat .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #E74C3C;
+    line-height: 1;
+}
+
+.center-stat .stat-label {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+.center-decoration {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.center-decoration i {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.center-decoration i:hover {
+    color: #E74C3C;
+    transform: translateY(-3px);
+}
+
+/* ========== TARJETAS GENERALES ========== */
+.portfolio-full-card, .portfolio-full-card-half {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.portfolio-full-grid.visible-portfolio-grid .portfolio-full-card,
+.portfolio-full-bottom-row.visible-portfolio-bottom .portfolio-full-card-half {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay escalonado para las tarjetas superiores */
+.portfolio-full-grid.visible-portfolio-grid .portfolio-full-card:nth-child(1) { transition-delay: 0.05s; }
+.portfolio-full-grid.visible-portfolio-grid .portfolio-full-card:nth-child(2) { transition-delay: 0.1s; }
+.portfolio-full-grid.visible-portfolio-grid .portfolio-full-card:nth-child(3) { transition-delay: 0.15s; }
+
+/* Delay escalonado para las tarjetas inferiores y texto central */
+.portfolio-full-bottom-row.visible-portfolio-bottom .portfolio-full-card-half:first-child { transition-delay: 0.2s; }
+.portfolio-full-bottom-row.visible-portfolio-bottom .portfolio-center-text { transition-delay: 0.25s; }
+.portfolio-full-bottom-row.visible-portfolio-bottom .portfolio-full-card-half:last-child { transition-delay: 0.3s; }
+
+/* Imagen de fondo */
+.portfolio-full-card-bg, .portfolio-full-card-half .portfolio-full-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.portfolio-full-card-bg img, .portfolio-full-card-half .portfolio-full-card-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.portfolio-full-card:hover .portfolio-full-card-bg img,
+.portfolio-full-card-half:hover .portfolio-full-card-bg img {
+    transform: scale(1.08);
+}
+
+/* Overlay oscuro */
+.portfolio-full-card-overlay, .portfolio-full-card-half .portfolio-full-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.4) 100%);
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.portfolio-full-card:hover .portfolio-full-card-overlay,
+.portfolio-full-card-half:hover .portfolio-full-card-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.5) 100%);
+}
+
+/* Contenido */
+.portfolio-full-card-content, .portfolio-full-card-half .portfolio-full-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 50px 40px;
+    color: white;
+    height: 100%;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ========== BORDES ========== */
+.portfolio-full-card.border-yellow, .portfolio-full-card-half.border-yellow {
+    border: 3px solid #F1C40F;
+    box-shadow: inset 0 0 30px rgba(241, 196, 15, 0.1);
+}
+
+.portfolio-full-card.border-yellow:hover, .portfolio-full-card-half.border-yellow:hover {
+    border-color: #F39C12;
+    transform: translateY(-8px);
+}
+
+.portfolio-full-card.border-red, .portfolio-full-card-half.border-red {
+    border: 3px solid #E74C3C;
+    box-shadow: inset 0 0 30px rgba(231, 76, 60, 0.15);
+    animation: borderRedPulseFull 1.5s ease-in-out infinite;
+}
+
+@keyframes borderRedPulseFull {
+    0% { border-color: #E74C3C; box-shadow: inset 0 0 20px rgba(231, 76, 60, 0.15); }
+    50% { border-color: #FF6B6B; box-shadow: inset 0 0 40px rgba(231, 76, 60, 0.4); }
+    100% { border-color: #E74C3C; box-shadow: inset 0 0 20px rgba(231, 76, 60, 0.15); }
+}
+
+.portfolio-full-card.border-red:hover, .portfolio-full-card-half.border-red:hover {
+    transform: translateY(-8px);
+}
+
+/* Iconos */
+.portfolio-full-card-icon, .portfolio-full-card-half .portfolio-full-card-icon {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    transition: all 0.4s ease;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.portfolio-full-card-icon i, .portfolio-full-card-half .portfolio-full-card-icon i {
+    font-size: 2.5rem;
+}
+
+.portfolio-full-card[data-category="rrhh"] .portfolio-full-card-icon i,
+.portfolio-full-card-half[data-category="rrhh"] .portfolio-full-card-icon i { color: #F1C40F; }
+.portfolio-full-card[data-category="nupilca"] .portfolio-full-card-icon i,
+.portfolio-full-card-half[data-category="nupilca"] .portfolio-full-card-icon i { color: #F1C40F; }
+.portfolio-full-card[data-category="biblioteca"] .portfolio-full-card-icon i,
+.portfolio-full-card-half[data-category="biblioteca"] .portfolio-full-card-icon i { color: #F1C40F; }
+.portfolio-full-card[data-category="veterinaria"] .portfolio-full-card-icon i,
+.portfolio-full-card-half[data-category="veterinaria"] .portfolio-full-card-icon i { color: #E74C3C; }
+.portfolio-full-card[data-category="inamolca"] .portfolio-full-card-icon i,
+.portfolio-full-card-half[data-category="inamolca"] .portfolio-full-card-icon i { color: #E74C3C; }
+
+.portfolio-full-card:hover .portfolio-full-card-icon,
+.portfolio-full-card-half:hover .portfolio-full-card-icon {
+    transform: scale(1.1);
+}
+
+.portfolio-full-card-title, .portfolio-full-card-half .portfolio-full-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.portfolio-full-card-title span, .portfolio-full-card-half .portfolio-full-card-title span {
+    color: #E74C3C;
+    font-size: 1.3rem;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.portfolio-full-card-line, .portfolio-full-card-half .portfolio-full-card-line {
+    width: 60px;
+    height: 2px;
+    margin: 0 auto 20px;
+    transition: width 0.4s ease;
+}
+
+.portfolio-full-card.border-yellow .portfolio-full-card-line,
+.portfolio-full-card-half.border-yellow .portfolio-full-card-line {
+    background: #F1C40F;
+}
+
+.portfolio-full-card.border-red .portfolio-full-card-line,
+.portfolio-full-card-half.border-red .portfolio-full-card-line {
+    background: #E74C3C;
+}
+
+.portfolio-full-card:hover .portfolio-full-card-line,
+.portfolio-full-card-half:hover .portfolio-full-card-line {
+    width: 100px;
+}
+
+.portfolio-full-card-description, .portfolio-full-card-half .portfolio-full-card-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio-full-card-tags, .portfolio-full-card-half .portfolio-full-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.portfolio-full-card-tags span, .portfolio-full-card-half .portfolio-full-card-tags span {
+    font-size: 0.75rem;
+    padding: 6px 16px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 30px;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.portfolio-full-card.border-yellow .portfolio-full-card-tags span:hover,
+.portfolio-full-card-half.border-yellow .portfolio-full-card-tags span:hover {
+    background: #F1C40F;
+    color: #1a1a2e;
+    transform: translateY(-2px);
+}
+
+.portfolio-full-card.border-red .portfolio-full-card-tags span:hover,
+.portfolio-full-card-half.border-red .portfolio-full-card-tags span:hover {
+    background: #E74C3C;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Botones */
+.portfolio-full-btn, .portfolio-full-card-half .portfolio-full-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 35px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    border-radius: 50px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    cursor: pointer;
+    margin-top: auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.portfolio-full-btn:hover, .portfolio-full-card-half .portfolio-full-btn:hover {
+    gap: 18px;
+    transform: translateY(-3px);
+}
+
+.portfolio-full-card.border-yellow .portfolio-full-btn:hover,
+.portfolio-full-card-half.border-yellow .portfolio-full-btn:hover {
+    background: #F1C40F;
+    color: #1a1a2e;
+    border-color: #F1C40F;
+}
+
+.portfolio-full-card.border-red .portfolio-full-btn:hover,
+.portfolio-full-card-half.border-red .portfolio-full-btn:hover {
+    background: #E74C3C;
+    border-color: #E74C3C;
+}
+
+.portfolio-full-btn i, .portfolio-full-card-half .portfolio-full-btn i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-full-btn:hover i, .portfolio-full-card-half .portfolio-full-btn:hover i {
+    transform: translateX(6px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+    .portfolio-full-hero-title {
+        font-size: 3rem;
+    }
+    .portfolio-full-bottom-row {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-center-text {
+        min-height: auto;
+        padding: 60px 30px;
+    }
+    .portfolio-full-card-half {
+        min-height: 500px;
+    }
+    .portfolio-full-card-half:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .portfolio-full-card-half:last-child {
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-full-hero-title {
+        font-size: 2.2rem;
+    }
+    .portfolio-full-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .center-title {
+        font-size: 1.6rem;
+    }
+    .center-description br {
+        display: none;
+    }
+    .portfolio-full-card-content,
+    .portfolio-full-card-half .portfolio-full-card-content {
+        padding: 40px 30px;
+        min-height: 480px;
+    }
+}
+
+@media (max-width: 576px) {
+    .portfolio-full-hero-title {
+        font-size: 1.8rem;
+    }
+    .portfolio-full-grid {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-full-card-content,
+    .portfolio-full-card-half .portfolio-full-card-content {
+        padding: 35px 25px;
+        min-height: 450px;
+    }
+    .portfolio-full-card-title,
+    .portfolio-full-card-half .portfolio-full-card-title {
+        font-size: 1.5rem;
+    }
+    .center-title {
+        font-size: 1.4rem;
+    }
+    .center-stats {
+        gap: 25px;
+    }
+    .center-stat .stat-number {
+        font-size: 1.6rem;
+    }
+}
+</style>
+
+<script>
+// ========== ANIMACIONES DEL PORTAFOLIO FULL WIDTH ==========
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Elementos
+    const portfolioSection = document.getElementById('portfolioSection');
+    const portfolioHero = document.getElementById('portfolioHero');
+    const portfolioGridTop = document.getElementById('portfolioGridTop');
+    const portfolioBottomRow = document.querySelector('.portfolio-full-bottom-row');
+    const scrollArrow = document.getElementById('portfolioScrollArrow');
+    
+    // ========== ANIMACIÓN DE ENTRADA ==========
+    function checkPortfolioScroll() {
+        if (portfolioSection) {
+            const rect = portfolioSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                portfolioSection.classList.add('visible-portfolio');
+                setTimeout(() => {
+                    if (portfolioHero) portfolioHero.classList.add('animate-portfolio');
+                }, 100);
+                setTimeout(() => {
+                    if (portfolioGridTop) portfolioGridTop.classList.add('visible-portfolio-grid');
+                }, 300);
+                setTimeout(() => {
+                    if (portfolioBottomRow) portfolioBottomRow.classList.add('visible-portfolio-bottom');
+                }, 400);
+            }
+        }
+    }
+    
+    window.addEventListener('scroll', checkPortfolioScroll);
+    checkPortfolioScroll();
+    
+    // ========== SCROLL SUAVE ==========
+    if (scrollArrow) {
+        scrollArrow.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (portfolioGridTop) {
+                const gridPosition = portfolioGridTop.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: gridPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+    
+    // ========== ANIMACIONES CON ANIME.JS ==========
+    function animateCardsEntrance() {
+        const cards = document.querySelectorAll('.portfolio-full-card, .portfolio-full-card-half');
+        cards.forEach((card, index) => {
+            anime({
+                targets: card,
+                opacity: [0, 1],
+                translateY: [50, 0],
+                delay: index * 100,
+                duration: 700,
+                easing: 'easeOutElastic(1, 0.6)'
+            });
+        });
+        
+        // Animación del texto central
+        const centerText = document.querySelector('.center-text-content');
+        if (centerText) {
+            anime({
+                targets: centerText,
+                opacity: [0, 1],
+                scale: [0.9, 1],
+                delay: 400,
+                duration: 800,
+                easing: 'easeOutBack'
+            });
+        }
+    }
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCardsEntrance();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    if (portfolioSection) {
+        observer.observe(portfolioSection);
+    }
+    
+    // ========== EFECTO PARALLAX ==========
+    if (portfolioHero) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroBg = document.querySelector('.portfolio-full-hero-bg');
+            if (heroBg && scrolled < window.innerHeight) {
+                heroBg.style.transform = `scale(${1 + scrolled / 2000})`;
+            }
+        });
+    }
+    
+    // ========== ANIMACIÓN DE ÍCONOS DEL TEXTO CENTRAL ==========
+    const centerIcons = document.querySelectorAll('.center-decoration i');
+    centerIcons.forEach((icon, index) => {
+        setInterval(() => {
+            anime({
+                targets: icon,
+                scale: [1, 1.2, 1],
+                duration: 500,
+                easing: 'easeOutQuad'
+            });
+        }, 2000 + (index * 300));
+    });
+    
+    // ========== EFECTOS HOVER EN TARJETAS ==========
+    const allCards = document.querySelectorAll('.portfolio-full-card, .portfolio-full-card-half');
+    allCards.forEach(card => {
+        const icon = card.querySelector('.portfolio-full-card-icon i');
+        
+        card.addEventListener('mouseenter', () => {
+            if (icon) {
+                anime({
+                    targets: icon,
+                    scale: [1, 1.15],
+                    rotate: [0, 5],
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            }
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            if (icon) {
+                anime({
+                    targets: icon,
+                    scale: [1.15, 1],
+                    rotate: [5, 0],
+                    duration: 300,
+                    easing: 'easeOutQuad'
+                });
+            }
+        });
+    });
+});
+</script>
+
+
+    <!-- ========== SECCIÓN CONTACTO ========== -->
+    <section class="contact-section" id="contactSection">
+        <div class="contact-header" id="contactHeader">
+            <div class="contact-badge">CONTACTO</div>
+            <h2 class="contact-title">¿Tienes <span>dudas?</span></h2>
+            <div class="contact-line"></div>
+            <p class="contact-subtitle">Estamos aquí para ayudarte. Comunícate con nosotros a través de cualquiera de nuestros canales</p>
+        </div>
+        
+        <div class="contact-container">
+            <!-- Mapa Google Maps -->
+            <div class="contact-map" id="contactMap">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15687.146384465809!2d-69.207896!3d9.555518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4c7c7c7c7c7c7c%3A0x7c7c7c7c7c7c7c7c!2sAcarigua%2C%20Portuguesa%2C%20Venezuela!5e0!3m2!1ses!2sus!4v1700000000000!5m2!1ses!2sus" 
+                    width="100%" 
+                    height="280" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+                <div class="map-address">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Diagonal a la Cruz Roja, Sector Bellas Artes, Acarigua, Portuguesa</span>
+                </div>
+            </div>
+            
+            <!-- Información de contacto -->
+            <div class="contact-info" id="contactInfo">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Teléfono</h4>
+                        <p>+58 255-1234567</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Correo Electrónico</h4>
+                        <p>info@uptp.edu.ve</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Horario de Atención</h4>
+                        <p>Lunes a Viernes | 8:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========== FOOTER PROFESIONAL CON IMAGEN DE FONDO ========== -->
+    <footer class="footer-professional" id="footerProfessional">
+        <div class="footer-bg-image"></div>
+        <div class="footer-overlay"></div>
+        
+        <div class="footer-container">
+            <!-- Logo y descripción -->
+            <div class="footer-col footer-about">
+                <div class="footer-logo">
+                    <div class="logo-icon-footer">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="logo-text-footer">
+                        <h3>UPTP J.J. MONTILLA</h3>
+                        <p>Universidad Politécnica Territorial</p>
+                    </div>
+                </div>
+                <p class="footer-description">
+                    Formamos profesionales en informática con un alto compromiso social, preparados para contribuir al desarrollo tecnológico y a la soberanía tecnológica del país.
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/prensauptpjjmontilla/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@prensa.uptp.jj.mo"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@educaciondigital-uptpjjmon6898"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/juandejesus.montilla.9"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            
+            <!-- Enlaces rápidos -->
+            <div class="footer-col footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#pnfi">PNFI</a></li>
+                    <li><a href="#projectsShowcase">Proyectos</a></li>
+                    <li><a href="#techGalleryUnique">Galería</a></li>
+                    <li><a href="#portfolioSection">Portafolio</a></li>
+                    <li><a href="#contactSection">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contacto footer -->
+            <div class="footer-col footer-contact">
+                <h4>Contacto</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Diagonal a la Cruz Roja, Sector Bellas Artes, Acarigua, Portuguesa</li>
+                    <li><i class="fas fa-phone-alt"></i> +58 255-1234567</li>
+                    <li><i class="fas fa-envelope"></i> info@uptp.edu.ve</li>
+                    <li><i class="fas fa-clock"></i> Lun - Vie: 8:00 AM - 5:00 PM</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Bottom bar con botón subir -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2025 UPTP J.J. Montilla - Programa Nacional de Formación en Informática. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+                <button class="scroll-top-btn" id="scrollTopBtnFooter">
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== CHATBOT PROFESIONAL CON BOTÓN ANIMADO ========== -->
+    <div class="chatbot-container" id="chatbotContainer">
+        
+        <!-- Botón animado más pequeño -->
+        <div class="chatbot-button" id="chatbotButton">
+            <div id="ghost">
+                <div id="red">
+                    <div id="pupil"></div>
+                    <div id="pupil1"></div>
+                    <div id="eye"></div>
+                    <div id="eye1"></div>
+                    <div id="top0"></div>
+                    <div id="top1"></div>
+                    <div id="top2"></div>
+                    <div id="top3"></div>
+                    <div id="top4"></div>
+                    <div id="st0"></div>
+                    <div id="st1"></div>
+                    <div id="st2"></div>
+                    <div id="st3"></div>
+                    <div id="st4"></div>
+                    <div id="st5"></div>
+                    <div id="an1"></div>
+                    <div id="an2"></div>
+                    <div id="an3"></div>
+                    <div id="an4"></div>
+                    <div id="an5"></div>
+                    <div id="an6"></div>
+                    <div id="an7"></div>
+                    <div id="an8"></div>
+                    <div id="an9"></div>
+                    <div id="an10"></div>
+                    <div id="an11"></div>
+                    <div id="an12"></div>
+                    <div id="an13"></div>
+                    <div id="an14"></div>
+                    <div id="an15"></div>
+                    <div id="an16"></div>
+                    <div id="an17"></div>
+                    <div id="an18"></div>
+                </div>
+                <div id="shadow"></div>
+            </div>
+            <div class="chatbot-pulse"></div>
+            <span class="chatbot-tooltip">¿Tienes preguntas?</span>
+        </div>
+        
+        <!-- Ventana del chat -->
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-header-info">
+                    <div class="chatbot-avatar animated-robot">
+                        <i class="fas fa-robot"></i>
+                        <div class="robot-glow"></div>
+                    </div>
+                    <div class="chatbot-header-text">
+                        <h4>Asistente PNFI</h4>
+                        <p>Online • Responde en segundos</p>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-bubble">
+                        <p><i class="fas fa-waveform"></i> Hola! Soy el asistente virtual del PNFI. Estoy aquí para resolver tus dudas sobre la carrera de Informática. Selecciona una pregunta del menú o escribe tu consulta.</p>
+                        <span class="message-time">Ahora</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Select dropdown para preguntas comunes -->
+            <div class="chatbot-select-container">
+                <select id="chatbotSelect" class="chatbot-select">
+                    <option value="" disabled selected><i class="fas fa-list"></i> Selecciona una pregunta frecuente...</option>
+                    <option value="duracion"><i class="fas fa-hourglass-half"></i> Cuánto dura la carrera?</option>
+                    <option value="requisitos"><i class="fas fa-file-alt"></i> Qué requisitos necesito?</option>
+                    <option value="materias"><i class="fas fa-book"></i> Qué materias voy a ver?</option>
+                    <option value="salidas"><i class="fas fa-briefcase"></i> Dónde puedo trabajar?</option>
+                    <option value="software"><i class="fas fa-laptop-code"></i> Necesito saber programar?</option>
+                    <option value="titulos"><i class="fas fa-graduation-cap"></i> Qué títulos obtengo?</option>
+                    <option value="horario"><i class="fas fa-calendar-alt"></i> Cuál es el horario?</option>
+                    <option value="costo"><i class="fas fa-money-bill-wave"></i> Es gratuito?</option>
+                </select>
+            </div>
+            
+            <div class="chatbot-input">
+                <input type="text" placeholder="Escribe tu pregunta aquí..." id="chatbotInput">
+                <button id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

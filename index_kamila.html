@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>UPTP J.J. Montilla | Sistema de Trámites Docentes · Impacto Comunitario</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+            background: #F8FAFE;
+            color: #1A1E2C;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scroll elegante */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #E9EEF4; }
+        ::-webkit-scrollbar-thumb { background: #C0392B; border-radius: 20px; }
+        
+        /* Header limpio */
+        .header-clean {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 0.8rem 6%;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.02);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #C0392B, #A93226);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(192,57,43,0.2);
+        }
+        .logo-text h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #1E293B;
+        }
+        .logo-text p {
+            font-size: 0.7rem;
+            color: #5A6874;
+            font-weight: 500;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #2C3E50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover { color: #C0392B; }
+        .btn-intranet {
+            background: #C0392B;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 8px rgba(192,57,43,0.2);
+        }
+        .btn-intranet:hover { background: #A93226; transform: translateY(-1px); }
+        .menu-toggle { display: none; font-size: 1.6rem; cursor: pointer; color: #1E293B; }
+        
+        /* Hero Sección */
+        .hero-modern {
+            min-height: 90vh;
+            background: linear-gradient(120deg, #F9FBFD 0%, #F1F5F9 100%);
+            display: flex;
+            align-items: center;
+            padding: 8rem 6% 5rem;
+            position: relative;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            width: 100%;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(192,57,43,0.08);
+            color: #C0392B;
+            padding: 5px 14px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
+        }
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 3.2rem;
+            line-height: 1.2;
+            font-weight: 800;
+            color: #0F172A;
+        }
+        .hero-title span {
+            color: #C0392B;
+            border-bottom: 3px solid #F1C40F;
+            display: inline-block;
+        }
+        .hero-desc {
+            margin: 24px 0;
+            color: #475569;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+        .stats-hero {
+            display: flex;
+            gap: 2rem;
+            margin-top: 28px;
+        }
+        .stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #C0392B;
+        }
+        .hero-image-modern {
+            background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop') center/cover;
+            border-radius: 32px;
+            height: 400px;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.15);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        
+        /* Secciones generales */
+        .section-white {
+            padding: 80px 6%;
+            background: #FFFFFF;
+            border-bottom: 1px solid #EFF3F8;
+        }
+        .section-gray {
+            background: #F8FAFE;
+            padding: 80px 6%;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-sub {
+            color: #C0392B;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .section-title {
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-top: 12px;
+            color: #0F172A;
+        }
+        .system-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        .card-modern {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 28px;
+            border: 1px solid #EDF2F7;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+        }
+        .card-modern:hover {
+            transform: translateY(-8px);
+            border-color: #C0392B30;
+            box-shadow: 0 20px 30px -12px rgba(192,57,43,0.12);
+        }
+        .card-icon {
+            font-size: 2.4rem;
+            color: #C0392B;
+            margin-bottom: 22px;
+        }
+        .card-modern h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        /* Flujo pasos */
+        .steps-clean {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .step-item {
+            flex: 1;
+            background: white;
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+            border: 1px solid #EEF2F8;
+        }
+        .step-number-circle {
+            width: 52px;
+            height: 52px;
+            background: #C0392B10;
+            color: #C0392B;
+            font-weight: 800;
+            font-size: 1.4rem;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            border: 1px solid #C0392B30;
+        }
+        
+        /* Datos impacto */
+        .stats-impact {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+            margin: 50px 0;
+        }
+        .stat-card-impact {
+            background: white;
+            border-radius: 28px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #EDF2F7;
+        }
+        .stat-number-xl {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #C0392B;
+        }
+        .testimonial-card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            padding: 32px;
+            border-left: 4px solid #C0392B;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+        }
+        .grid-community {
+            display: flex;
+            gap: 2rem;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .community-box {
+            background: white;
+            border-radius: 28px;
+            padding: 28px;
+            flex: 1;
+        }
+        
+        /* Footer */
+        .footer-elegant {
+            background: #0F172A;
+            color: #E2E8F0;
+            padding: 50px 6% 30px;
+        }
+        .footer-inner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 2.5rem;
+        }
+        .signature {
+            text-align: center;
+            margin-top: 45px;
+            padding-top: 30px;
+            border-top: 1px solid #1E293B;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        .signature span {
+            color: #E67E22;
+            font-weight: 600;
+        }
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid #C0392B;
+            padding: 6px 18px;
+            border-radius: 40px;
+            color: #C0392B;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 1000px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .system-grid { grid-template-columns: repeat(2,1fr); }
+            .stats-impact { grid-template-columns: repeat(2,1fr); }
+            .nav-links { display: none; }
+            .menu-toggle { display: block; }
+        }
+        @media (max-width: 700px) {
+            .system-grid { grid-template-columns: 1fr; }
+            .steps-clean { flex-direction: column; }
+        }
+        
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.2,0.9,0.4,1.1), transform 0.7s ease;
+        }
+        .fade-up.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        button, .card-modern { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<header class="header-clean" id="mainHeader">
+    <div class="header-container">
+        <div class="logo-area">
+            <div class="logo-icon"><i class="fas fa-landmark"></i></div>
+            <div class="logo-text">
+                <h1>UPTP J.J. MONTILLA</h1>
+                <p>Universidad Politécnica Territorial</p>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="navMenu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sistema">Sistema</a></li>
+            <li><a href="#impacto">Impacto</a></li>
+            <li><a href="#datos">Datos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-modern" id="inicio">
+    <div class="hero-grid">
+        <div class="hero-left fade-up">
+            <div class="hero-badge">SISTEMA INTEGRAL DE TRÁMITES DOCENTES</div>
+            <h1 class="hero-title">Gestión eficiente para <span>docentes</span> <br>y comunidad universitaria</h1>
+            <p class="hero-desc">Plataforma centralizada que digitaliza y agiliza procesos administrativos: solicitudes, certificaciones y expedientes. Impacto real en la calidad de vida del personal académico y su entorno.</p>
+            <div class="stats-hero">
+                <div class="stat-item"><h3>+94%</h3><p>Eficiencia operativa</p></div>
+                <div class="stat-item"><h3>3.2K+</h3><p>Trámites / mes</p></div>
+                <div class="stat-item"><h3>100%</h3><p>Digitalización</p></div>
+            </div>
+        </div>
+        <div class="hero-image-modern fade-up" style="animation-delay: 0.1s;"></div>
+    </div>
+</section>
+
+<!-- SISTEMA DE TRÁMITES DOCENTES -->
+<section class="section-white" id="sistema">
+    <div class="section-header fade-up">
+        <div class="section-sub">TECNOLOGÍA CÉNTRICA</div>
+        <h2 class="section-title">Sistema de Trámites Docentes</h2>
+        <p style="color:#5B6E8C; max-width: 700px; margin: 12px auto;">Automatización, trazabilidad y equidad para la gestión del talento humano universitario</p>
+    </div>
+    <div class="system-grid">
+        <div class="card-modern fade-up"><div class="card-icon"><i class="fas fa-file-alt"></i></div><h3>Solicitudes Rápidas</h3><p>Permisos, comisiones, constancias, y licencias con notificaciones automáticas.</p></div>
+        <div class="card-modern fade-up"><div class="card-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Evaluación Docente</h3><p>Autoevaluación y evaluación por pares, dashboards de desempeño.</p></div>
+        <div class="card-modern fade-up"><div class="card-icon"><i class="fas fa-folder-open"></i></div><h3>Expediente Digital</h3><p>Historial laboral, escalafón, formación y documentos con firma electrónica.</p></div>
+        <div class="card-modern fade-up"><div class="card-icon"><i class="fas fa-chart-line"></i></div><h3>Indicadores Estratégicos</h3><p>Reportes en tiempo real para dirección de recursos humanos.</p></div>
+        <div class="card-modern fade-up"><div class="card-icon"><i class="fas fa-shield-alt"></i></div><h3>Seguridad y Auditoría</h3><p>Cumplimiento normativo, cifrado y trazabilidad total.</p></div>
+        <div class="card-modern fade-up"><div class="card-icon"><i class="fas fa-hand-sparkles"></i></div><h3>Bienestar Docente</h3><p>Vinculación con programas sociales y asesoría integral.</p></div>
+    </div>
+</section>
+
+<!-- FLUJO DEL SISTEMA -->
+<section class="section-gray">
+    <div class="section-header fade-up">
+        <div class="section-sub">CÓMO FUNCIONA</div>
+        <h2 class="section-title">Flujo Ágil y Transparente</h2>
+    </div>
+    <div class="steps-clean">
+        <div class="step-item fade-up"><div class="step-number-circle">1</div><h4>Solicitud en Línea</h4><p>El docente inicia trámite desde el portal con un solo clic.</p></div>
+        <div class="step-item fade-up"><div class="step-number-circle">2</div><h4>Validación Automática</h4><p>Reglas de negocio y notificación a jefatura.</p></div>
+        <div class="step-item fade-up"><div class="step-number-circle">3</div><h4>Aprobación Digital</h4><p>Firma electrónica y actualización del expediente.</p></div>
+        <div class="step-item fade-up"><div class="step-number-circle">4</div><h4>Respuesta Oportuna</h4><p>Documento oficial generado y descargable.</p></div>
+    </div>
+</section>
+
+<!-- IMPACTO COMUNITARIO -->
+<section id="impacto" class="section-white">
+    <div class="section-header fade-up">
+        <div class="section-sub">IMPACTO SOCIAL</div>
+        <h2 class="section-title">La universidad que transforma su entorno</h2>
+        <p style="color:#5B6E8C">El sistema de trámites ha liberado tiempo para la extensión y fortalecido la relación universidad-comunidad.</p>
+    </div>
+    <div class="stats-impact">
+        <div class="stat-card-impact fade-up"><div class="stat-number-xl">-68%</div><p>Tiempos de respuesta</p></div>
+        <div class="stat-card-impact fade-up"><div class="stat-number-xl">3.800+</div><p>Usuarios activos</p></div>
+        <div class="stat-card-impact fade-up"><div class="stat-number-xl">96%</div><p>Satisfacción docente</p></div>
+        <div class="stat-card-impact fade-up"><div class="stat-number-xl">52</div><p>Proyectos comunitarios impulsados</p></div>
+    </div>
+    <div class="testimonial-card fade-up">
+        <i class="fas fa-quote-left" style="color:#C0392B; font-size: 1.6rem; opacity:0.7"></i>
+        <p style="font-size: 1.1rem; margin: 15px 0;">“La automatización nos ha permitido reducir la burocracia y focalizar esfuerzos en la formación integral y el acompañamiento a las comunidades locales. Un avance significativo en gestión institucional.”</p>
+        <p><strong>— Dra. Lourdes Ramírez, <span style="color:#C0392B;">Decana de Investigación</span></strong></p>
+    </div>
+    <div class="grid-community">
+        <div class="community-box fade-up"><i class="fas fa-people-arrows" style="font-size: 2rem; color:#C0392B;"></i><h3 style="margin: 15px 0 10px;">Vinculación Social</h3><p>Más de 120 docentes participan activamente en proyectos sociotecnológicos con consejos comunales.</p></div>
+        <div class="community-box fade-up"><i class="fas fa-chart-simple" style="font-size: 2rem; color:#C0392B;"></i><h3 style="margin: 15px 0 10px;">Transparencia</h3><p>Portal de seguimiento de trámites abierto a la comunidad universitaria.</p></div>
+        <div class="community-box fade-up"><i class="fas fa-graduation-cap" style="font-size: 2rem; color:#C0392B;"></i><h3 style="margin: 15px 0 10px;">Formación Continua</h3><p>Programas de capacitación en gestión digital para docentes y administrativos.</p></div>
+    </div>
+</section>
+
+<!-- DATOS RELEVANTES COMUNIDAD -->
+<section id="datos" class="section-gray">
+    <div class="section-header fade-up">
+        <div class="section-sub">DATOS INSTITUCIONALES</div>
+        <h2 class="section-title">Cifras que respaldan nuestro compromiso</h2>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+        <div class="stat-card-impact fade-up" style="flex: 1; min-width: 200px;"><div class="stat-number-xl">+2.500</div><p>Docentes registrados</p></div>
+        <div class="stat-card-impact fade-up" style="flex: 1; min-width: 200px;"><div class="stat-number-xl">99%</div><p>Trámites sin papel</p></div>
+        <div class="stat-card-impact fade-up" style="flex: 1; min-width: 200px;"><div class="stat-number-xl">1.200h</div><p>Horas dedicadas a proyectos comunitarios</p></div>
+        <div class="stat-card-impact fade-up" style="flex: 1; min-width: 200px;"><div class="stat-number-xl">15</div><p>Unidades académicas integradas</p></div>
+    </div>
+    <div style="margin-top: 50px; background: white; border-radius: 28px; padding: 30px; text-align: center;" class="fade-up">
+        <i class="fas fa-database" style="font-size: 2rem; color:#C0392B;"></i>
+        <p style="margin-top: 12px;">El sistema ha procesado más de 27.000 solicitudes desde su implementación, con un tiempo promedio de resolución de 48 horas (antes 12 días hábiles).</p>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="section-white">
+    <div class="section-header fade-up">
+        <div class="section-sub">SOPORTE Y ASISTENCIA</div>
+        <h2 class="section-title">¿Necesitas ayuda con el sistema?</h2>
+        <p>Mesa de ayuda para trámites docentes y orientación técnica</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+        <div class="community-box fade-up" style="text-align: center;"><i class="fas fa-envelope" style="font-size: 2rem; color:#C0392B;"></i><h4 style="margin: 12px 0;">Correo oficial</h4><p>tramites.docentes@uptpjj.edu.ve</p></div>
+        <div class="community-box fade-up" style="text-align: center;"><i class="fas fa-headset" style="font-size: 2rem; color:#C0392B;"></i><h4 style="margin: 12px 0;">WhatsApp Soporte</h4><p>+58 412 345 6789</p></div>
+        <div class="community-box fade-up" style="text-align: center;"><i class="fas fa-clock" style="font-size: 2rem; color:#C0392B;"></i><h4 style="margin: 12px 0;">Horario</h4><p>Lun a Vie 8am - 5pm</p></div>
+    </div>
+</section>
+
+<!-- FOOTER ELEGANTE -->
+<footer class="footer-elegant">
+    <div class="footer-inner">
+        <div>
+            <h3 style="font-weight: 700;">UPTP <span style="color:#C0392B;">J.J. Montilla</span></h3>
+            <p style="margin-top: 12px; opacity:0.7;">Sistema de Trámites Docentes + Impacto Comunitario · Innovación pública al servicio del talento humano.</p>
+        </div>
+        <div>
+            <h4>Navegación</h4>
+            <ul style="list-style: none; margin-top: 12px;">
+                <li><a href="#inicio" style="color:#CBD5E1; text-decoration: none;">Inicio</a></li>
+                <li><a href="#sistema" style="color:#CBD5E1; text-decoration: none;">Sistema de Trámites</a></li>
+                <li><a href="#impacto" style="color:#CBD5E1; text-decoration: none;">Impacto Comunidad</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Recursos</h4>
+            <ul style="list-style: none; margin-top: 12px;">
+                <li><a href="#" style="color:#CBD5E1; text-decoration: none;">Manual de usuario</a></li>
+                <li><a href="#" style="color:#CBD5E1; text-decoration: none;">Preguntas frecuentes</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="signature">
+        <p>© 2025 UPTP Juan Jesús Montilla – Sistema de Gestión y Trámites Docentes</p>
+        <p style="margin-top: 8px;">made in <span>Mariangel</span> ✦ con tecnología de vanguardia</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu
+    const menuToggle = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    if(menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            if(navMenu.style.display === 'flex') navMenu.style.display = 'none';
+            else navMenu.style.display = 'flex';
+        });
+    }
+    window.addEventListener('resize', () => {
+        if(window.innerWidth > 1000) navMenu.style.display = 'flex';
+        else if(window.innerWidth <= 1000 && navMenu.style.display !== 'none') navMenu.style.display = 'none';
+    });
+    
+    // IntersectionObserver para fade-up limpio
+    const faders = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
+    faders.forEach(el => observer.observe(el));
+    
+    // ANIME.JS PROFESIONAL: animaciones adicionales en cards y hero
+    anime({
+        targets: '.hero-image-modern',
+        opacity: [0, 1],
+        translateX: [40, 0],
+        duration: 1100,
+        easing: 'easeOutExpo',
+        delay: 200
+    });
+    anime({
+        targets: '.hero-left',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 1000,
+        easing: 'easeOutCubic',
+        delay: 100
+    });
+    
+    // Animación sutil a las cards al hacer hover
+    const cards = document.querySelectorAll('.card-modern');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            anime({
+                targets: card.querySelector('.card-icon i'),
+                scale: [1, 1.08],
+                duration: 280,
+                easing: 'easeOutQuad'
+            });
+        });
+        card.addEventListener('mouseleave', () => {
+            anime({
+                targets: card.querySelector('.card-icon i'),
+                scale: 1.08,
+                duration: 200,
+                easing: 'easeOutQuad'
+            });
+        });
+    });
+    
+    // stats números animados con Anime.js cuando aparecen
+    const statNumbers = document.querySelectorAll('.stat-number-xl');
+    const animateNumbers = () => {
+        statNumbers.forEach(el => {
+            const final = parseInt(el.innerText);
+            if(!isNaN(final)) {
+                let current = 0;
+                anime({
+                    targets: {val: 0},
+                    val: final,
+                    round: 1,
+                    duration: 1300,
+                    easing: 'easeOutElastic(1, .6)',
+                    update: function() {
+                        el.innerText = this.animations[0].currentValue + (el.innerText.includes('%') ? '%' : (final > 3000 ? '+' : ''));
+                        if(!el.innerText.includes('%') && !el.innerText.includes('+') && final < 3000) el.innerText = this.animations[0].currentValue;
+                        else if(final > 3000) el.innerText = '+' + Math.floor(this.animations[0].currentValue);
+                        else if(final.toString().includes('%')) el.innerText = Math.floor(this.animations[0].currentValue) + '%';
+                    }
+                });
+            }
+        });
+    };
+    
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                animateNumbers();
+                statsObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.4 });
+    const statsContainer = document.querySelector('.stats-impact');
+    if(statsContainer) statsObserver.observe(statsContainer);
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if(targetId === "#" || targetId === "") return;
+            const target = document.querySelector(targetId);
+            if(target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                if(window.innerWidth <= 1000) navMenu.style.display = 'none';
+            }
+        });
+    });
+    
+    // Intranet alerts
+    const intranetBtn = document.getElementById('intranetBtn');
+    const intranetFooterBtn = document.getElementById('intranetFooterBtn');
+    const showIntranetMsg = () => alert("🔐 Acceso a Intranet Docente: Sistema Unificado de Trámites. Credenciales institucionales próximamente.");
+    if(intranetBtn) intranetBtn.addEventListener('click', showIntranetMsg);
+    if(intranetFooterBtn) intranetFooterBtn.addEventListener('click', showIntranetMsg);
+    
+    // header shadow
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('mainHeader');
+        if(window.scrollY > 30) header.style.boxShadow = "0 8px 20px rgba(0,0,0,0.05)";
+        else header.style.boxShadow = "0 2px 12px rgba(0,0,0,0.02)";
+    });
+</script>
+</body>
+</html>
