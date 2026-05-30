@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Inamolca - Sistema Agrícola Integral | Innovación y Tecnología</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #FFFFFF;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --primary-green: #2ecc71;
+            --primary-dark: #27ae60;
+            --accent-yellow: #F1C40F;
+            --accent-gold: #F39C12;
+            --text-dark: #1A1A1A;
+            --text-gray: #6B6B6B;
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            padding: 0.5rem 0;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .logo-text h1 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.6rem;
+            color: var(--text-gray);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 8px 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #2ecc71, #F1C40F);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #2ecc71;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        /* Spider-Man contenedor */
+         /* SPIDER-MAN - Mejorado visual y desplazado un poco más hacia abajo/izquierda */
+        .spider-container {
+            position: fixed;
+            top: 85px;
+            right: 30px;
+            z-index: 1001;
+            cursor: pointer;
+            transform: scale(0.6);
+            transform-origin: top right;
+            transition: transform 0.3s ease, filter 0.2s;
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.2));
+        }
+
+        .spider-container:hover {
+            transform: scale(0.68);
+            filter: drop-shadow(0 12px 20px rgba(0,0,0,0.3));
+        }
+
+        /* Mensaje sorpresa abajo */
+        .surprise-message-bar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+        }
+
+        .surprise-message-bar.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .surprise-message-bar i {
+            font-size: 1.8rem;
+            color: #F1C40F;
+            animation: bounceIcon 0.5s ease infinite alternate;
+        }
+
+        @keyframes bounceIcon {
+            from { transform: translateY(0); }
+            to { transform: translateY(-6px); }
+        }
+
+        .surprise-message-bar span {
+            font-size: 1rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .surprise-message-bar.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+       
+
+        .close-surprise-bar {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .close-surprise-bar:hover {
+            background: #F1C40F;
+            transform: scale(1.1);
+        }
+
+        /* Spider-Man CSS */
+        .center {
+            position: absolute;
+            transform: translateX(-50%);
+            left: 50%;
+        }
+
+        .container {
+            height: 31.25em;
+            width: 21.87em;
+            margin-top: -325px;
+        }
+
+        .rope {
+            height: 13.62em;
+            width: 0.15em;
+            background-color: #ffffff;
+            animation: swing 2s infinite;
+        }
+
+        @keyframes swing {
+            50% { transform: translateY(-4em); }
+        }
+
+        .legs {
+            height: 1.12em;
+            width: 7.5em;
+            background-color: transparent;
+            box-shadow: 0 0 0 0.12em #140243, 0 0 0 1.06em #1b1676, 0 0 0 1.18em #140243;
+            top: 12.5em;
+            border-radius: 3.12em;
+        }
+
+        .boot-l, .boot-r {
+            height: 1.25em;
+            width: 2.5em;
+            background-color: #e32832;
+            position: absolute;
+            border: 0.12em solid #140243;
+            bottom: 1.12em;
+        }
+
+        .boot-l { left: 1em; }
+        .boot-r { transform: rotateY(180deg); left: 3.81em; }
+
+        .boot-l:before, .boot-r:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-bottom: 1.12em solid #140243;
+            border-left: 1.18em solid transparent;
+            bottom: 1.31em;
+            left: 1.46em;
+        }
+
+        .boot-l:after, .boot-r:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-bottom: 1.12em solid #e32832;
+            border-left: 1em solid transparent;
+            right: 0;
+            top: -0.93em;
+        }
+
+        .costume {
+            height: 6.25em;
+            width: 5.62em;
+            background: linear-gradient(to right, #1b1676 20%, #e32832 20%, #e32832 80%, #1b1676 80%);
+            border: 0.12em solid #140243;
+            top: 14.68em;
+        }
+
+        .spider {
+            height: 1.87em;
+            width: 0.93em;
+            background-color: #140243;
+            border-radius: 45%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: calc(50% + 0.93em);
+            left: 50%;
+        }
+
+        .s1, .s3 {
+            height: 7.5em;
+            width: 2.5em;
+            border-radius: 0 0 1.37em 1.37em;
+            border-bottom: 0.12em solid #140243;
+            position: absolute;
+            left: 50%;
+        }
+
+        .s2, .s4 {
+            height: 7.5em;
+            width: 3.12em;
+            border-radius: 0 0 1.56em 1.56em;
+            border-bottom: 0.12em solid #140243;
+            position: absolute;
+            left: 50%;
+        }
+
+        .s1 { bottom: 1.43em; }
+        .s2 { bottom: 0.93em; }
+        .s3, .s4 { transform: translateX(-50%) rotateX(180deg); }
+        .s3 { top: 1.43em; }
+        .s4 { top: 0.93em; }
+
+        .belt {
+            height: 0.43em;
+            width: 5.87em;
+            background-color: #e32832;
+            border: 0.12em solid #140243;
+            top: -0.12em;
+        }
+
+        .hand-r, .hand-l {
+            height: 8.12em;
+            background: linear-gradient(#e32832 4.6em, #140243 4.6em, #140243 4.75em, #1b1676 4.75em, #1b1676 8.12em);
+            width: 1.12em;
+            border: 0.12em solid #140243;
+            border-radius: 1.25em;
+            position: absolute;
+            transform-origin: bottom;
+            bottom: -0.12em;
+        }
+
+        .hand-r { right: -0.75em; transform: rotate(-22deg); }
+        .hand-l { left: -0.75em; transform: rotate(22deg); }
+
+        .neck {
+            height: 0.37em;
+            width: 1.25em;
+            background-color: #e32832;
+            bottom: -0.62em;
+            border: 0.12em solid #140243;
+        }
+
+        .mask {
+            height: 4.65em;
+            width: 4.06em;
+            background-color: #e32832;
+            border-radius: 50% 50% 50% 50% / 54% 54% 46% 46%;
+            border: 0.12em solid #140243;
+            top: 6.56em;
+        }
+
+        .eye-l, .eye-r {
+            height: 0.68em;
+            width: 1.37em;
+            background-color: #ffffff;
+            border-radius: 1.37em 1.37em 0 0;
+            border: 0.12em solid #140243;
+            position: absolute;
+            top: 2.1em;
+        }
+
+        .eye-l { left: 0.3em; }
+        .eye-r { right: 0.3em; }
+
+        .cover {
+            height: 3.12em;
+            width: 0.15em;
+            background-color: #ffffff;
+            bottom: 8.12em;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* ========== CARRUSEL ========== */
+        .carousel-section {
+            margin-top: 85px;
+            height: 100vh;
+            min-height: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.5);
+            transition: transform 0.8s ease-out;
+        }
+
+        .carousel-slide.active .slide-bg {
+            transform: scale(1);
+        }
+
+        .carousel-slide:not(.active) .slide-bg {
+            transform: scale(1.05);
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(0,0,0,0.4));
+        }
+
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 85%;
+            max-width: 900px;
+            z-index: 20;
+        }
+
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .slide-title span {
+            color: #F1C40F;
+        }
+
+        .slide-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #2ecc71, #F1C40F);
+            margin: 0 auto 20px;
+            border-radius: 3px;
+        }
+
+        .slide-description {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        /* Flechas laterales */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 30;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            border: 2px solid transparent;
+        }
+
+        .arrow-prev {
+            left: 30px;
+            border-color: #F1C40F;
+        }
+
+        .arrow-next {
+            right: 30px;
+            border-color: #2ecc71;
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-arrow i {
+            color: white;
+        }
+
+        /* Botón pausa circular */
+        .pause-btn {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            border: none;
+            cursor: pointer;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .pause-btn:hover {
+            background: #2ecc71;
+            transform: translateX(-50%) scale(1.05);
+        }
+
+        .pause-btn i {
+            font-size: 1.4rem;
+            color: white;
+        }
+
+        .progress-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-circle {
+            fill: none;
+            stroke: #F1C40F;
+            stroke-width: 2.5;
+            stroke-dasharray: 220;
+            stroke-dashoffset: 220;
+            transition: stroke-dashoffset 0.05s linear;
+        }
+
+        /* Indicadores */
+        .carousel-dots {
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 30;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #2ecc71;
+            transform: scale(1.3);
+        }
+
+        /* ========== SECCIONES ========== */
+        .info-section {
+            padding: 100px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid #2ecc71;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #2ecc71;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: #F1C40F;
+        }
+
+        .section-line {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #2ecc71, #F1C40F);
+            margin: 0 auto 20px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .info-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(241, 196, 15, 0.05));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .info-icon i {
+            font-size: 2rem;
+            color: #2ecc71;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--text-gray);
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border: 1px solid #2ecc71;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2ecc71;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            margin-top: 8px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 60px 5% 30px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #2ecc71;
+        }
+
+        .footer-contact p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-links { position: static; transform: none; }
+            .header-container { justify-content: space-between; gap: 20px; }
+        }
+
+        @media (max-width: 850px) {
+            .menu-toggle { display: block; order: 2; }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                padding: 20px 0;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background: white;
+                box-shadow: var(--shadow-lg);
+            }
+            .nav-links.active { display: flex; }
+            .spider-container { transform: scale(0.35); top: 60px; right: 10px; }
+            .carousel-section { margin-top: 70px; height: calc(100vh - 70px); }
+            .slide-title { font-size: 2rem; }
+            .impact-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 576px) {
+            .slide-title { font-size: 1.6rem; }
+            .slide-description { font-size: 0.9rem; }
+            .impact-stats { grid-template-columns: 1fr; }
+            .carousel-arrow { width: 40px; height: 40px; font-size: 0.9rem; }
+            .arrow-prev { left: 15px; }
+            .arrow-next { right: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo-icon"><i class="fas fa-tractor"></i></div>
+                <div class="logo-text">
+                    <h1>INAMOLCA</h1>
+                    <p>Sistema Agrícola Integral</p>
+                </div>
+            </div>
+
+            <div class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#historia">Historia</a></li>
+                <li><a href="#impacto">Impacto</a></li>
+                <li><a href="#proyecto">Proyecto</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Espacio vacío a la derecha para balance -->
+            <div style="width: 45px;"></div>
+        </div>
+    </header>
+
+    <!-- Spider-Man colgando arriba a la derecha -->
+    <div class="spider-container" id="spiderButton">
+        <div class="container center">
+            <div class="rope center">
+                <div class="legs center">
+                    <div class="boot-l"></div>
+                    <div class="boot-r"></div>
+                </div>
+                <div class="costume center">
+                    <div class="spider">
+                        <div class="s1 center"></div>
+                        <div class="s2 center"></div>
+                        <div class="s3"></div>
+                        <div class="s4"></div>
+                    </div>
+                    <div class="belt center"></div>
+                    <div class="hand-r"></div>
+                    <div class="hand-l"></div>
+                    <div class="neck center"></div>
+                    <div class="mask center">
+                        <div class="eye-l"></div>
+                        <div class="eye-r"></div>
+                    </div>
+                    <div class="cover center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mensaje sorpresa que aparece abajo -->
+    <div class="surprise-message-bar" id="surpriseBar">
+        <i class="fas fa-seedling"></i>
+        <span id="surpriseText">🌱 ¡Hola! Pulsa de nuevo para otro mensaje 🌱</span>
+        <button class="close-surprise-bar" id="closeSurpriseBar">✕</button>
+    </div>
+
+    <!-- Carrusel de Imágenes -->
+    <section class="carousel-section" id="inicio">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active" data-index="0">
+                    <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=1920&h=1080&fit=crop');"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">Inamolca<br><span>Sistema Agrícola Integral</span></h2>
+                        <div class="slide-line"></div>
+                        <p class="slide-description">Tecnología de vanguardia para la planificación estratégica y gestión agrícola del siglo XXI</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide" data-index="1">
+                    <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=1920&h=1080&fit=crop');"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">Innovación <span>Agrícola</span></h2>
+                        <div class="slide-line"></div>
+                        <p class="slide-description">Optimizamos la producción, distribución y mantenimiento con tecnología de punta</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide" data-index="2">
+                    <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1920&h=1080&fit=crop');"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <h2 class="slide-title">Gestión <span>Inteligente</span></h2>
+                        <div class="slide-line"></div>
+                        <p class="slide-description">Control total de cultivos, logística y mantenimiento en una sola plataforma</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flechas laterales -->
+            <div class="carousel-arrow arrow-prev" id="prevArrow">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="carousel-arrow arrow-next" id="nextArrow">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+
+            <!-- Botón pausa circular -->
+            <button class="pause-btn" id="pauseBtn">
+                <svg class="progress-ring" viewBox="0 0 80 80">
+                    <circle class="progress-ring-circle" cx="40" cy="40" r="35" />
+                </svg>
+                <i class="fas fa-pause" id="pauseIcon"></i>
+            </button>
+
+            <!-- Indicadores -->
+            <div class="carousel-dots" id="carouselDots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Historia -->
+    <section class="info-section" id="historia">
+        <div class="section-header">
+            <div class="section-badge">NUESTRA HISTORIA</div>
+            <h2 class="section-title">Historia de <span>Inamolca</span></h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Conoce nuestra trayectoria y compromiso con el desarrollo agrícola</p>
+        </div>
+        <div class="content-grid">
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-seedling"></i></div>
+                <h3>Nacimiento</h3>
+                <p>En el año 2017, nace en la ciudad de Ospino, Estado Portuguesa, por iniciativa del ciudadano Michel Francisco Figuerola Boesch, la Industria Agroalimentaria Los Molinos INAMOL, C.A.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Crecimiento</h3>
+                <p>Procesamiento y manufactura de materia prima Arroz Paddy, transformación de secado y acondicionamiento para comercialización en todo el estado.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-microchip"></i></div>
+                <h3>Transformación Digital</h3>
+                <p>Un paso adelante hacia la modernización con un sistema informático integral que optimiza procesos agrícolas, logísticos y de mantenimiento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Impacto -->
+    <section class="info-section" id="impacto" style="background: #F8F9FA; border-radius: 0;">
+        <div class="section-header">
+            <div class="section-badge">IMPACTO SOCIAL</div>
+            <h2 class="section-title">Transformando la <span>Comunidad</span></h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">El Proyecto Socio Tecnológico IV genera beneficios tangibles</p>
+        </div>
+        <div class="impact-stats">
+            <div class="stat-card"><div class="stat-number">100%</div><div class="stat-label">Digitalización de Procesos</div></div>
+            <div class="stat-card"><div class="stat-number">5+</div><div class="stat-label">Módulos Integrados</div></div>
+            <div class="stat-card"><div class="stat-number">24/7</div><div class="stat-label">Disponibilidad</div></div>
+        </div>
+        <div class="content-grid" style="margin-top: 40px;">
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-users"></i></div>
+                <h3>Impacto Social</h3>
+                <p>Modernización de métodos de trabajo, sustituyendo procedimientos manuales por mecanismos automatizados para un registro más preciso y mejor planificación.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-chart-pie"></i></div>
+                <h3>Beneficios Económicos</h3>
+                <p>Reducción de costos operativos, optimización de recursos y toma de decisiones basada en datos reales para maximizar la rentabilidad.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-globe-americas"></i></div>
+                <h3>Comunidad Beneficiada</h3>
+                <p>La empresa INAMOL C.A., sus trabajadores, proveedores y clientes, así como otras organizaciones del sector agrícola.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proyecto -->
+    <section class="info-section" id="proyecto">
+        <div class="section-header">
+            <div class="section-badge">EL PROYECTO</div>
+            <h2 class="section-title">Sistema para la <span>Planificación Estratégica</span></h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Solución integral para gestión agrícola, distribución y mantenimiento</p>
+        </div>
+        <div class="content-grid">
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-tractor"></i></div>
+                <h3>Gestión Agrícola</h3>
+                <p>Planificación de cultivos, control de siembra, riego, fertilización, control de plagas y cosecha, con trazabilidad completa del ciclo productivo.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-truck"></i></div>
+                <h3>Gestión de Distribución</h3>
+                <p>Control de rutas, gestión de flotas, registro de viajes y monitoreo de entregas para garantizar eficiencia y reducción de costos logísticos.</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon"><i class="fas fa-wrench"></i></div>
+                <h3>Gestión de Mantenimiento</h3>
+                <p>Mantenimientos preventivos y correctivos de maquinaria agrícola, vehículos e instalaciones, con historial completo de intervenciones.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h3>INAMOLCA</h3>
+                <p>Sistema Informático para la Planificación Estratégica y Gestión Agrícola del Departamento de Distribución y Producción</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#historia">Historia</a></li>
+                    <li><a href="#impacto">Impacto Social</a></li>
+                    <li><a href="#proyecto">El Proyecto</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Autopista General José Antonio Páez, Parcela 17, Ospino, Portuguesa</p>
+                <p><i class="fas fa-envelope"></i> info@inamolca.com</p>
+                <p><i class="fas fa-phone"></i> +58 255-1234567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Inamolca - Sistema Agrícola Integral. Todos los derechos reservados. Proyecto Socio Tecnológico IV - PNFI Informática.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ========== HEADER SCROLL ==========
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+
+            // ========== MENÚ HAMBURGUESA ==========
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+
+            // ========== SPIDER-MAN CON SORPRESA (MENSAJE ABAJO) ==========
+            const spiderBtn = document.getElementById('spiderButton');
+            const surpriseBar = document.getElementById('surpriseBar');
+            const surpriseText = document.getElementById('surpriseText');
+            const closeSurpriseBar = document.getElementById('closeSurpriseBar');
+            
+            const messages = [
+                "🌱 ¡Me haces cosquillas! 🌱",
+                "😜 ¡No me hagas gracias! 😜",
+                "🌿 ¡Déjame en paz! 🌿",
+                "😂 ¡Me haces reír demasiado! 😂",
+                "🤪 ¡Eres un caso perdido! 🤪",
+                "🍅 ¡La agricultura también se divierte! 🍅",
+                "🕷️ ¡Spider-Man dice hola! 🕷️",
+                "🌽 ¡Qué bien te diviertes! 🌽"
+            ];
+            
+            let msgIndex = 0;
+            
+            spiderBtn.addEventListener('click', () => {
+                surpriseText.textContent = messages[msgIndex % messages.length];
+                surpriseBar.classList.add('show');
+                msgIndex++;
+                
+                // Animación del Spider-Man
+                anime({
+                    targets: spiderBtn,
+                    scale: [0.45, 0.55, 0.45],
+                    rotate: [0, 10, -10, 0],
+                    duration: 500,
+                    easing: 'easeOutElastic(1, 0.6)'
+                });
+                
+                // Auto-ocultar después de 4 segundos
+                setTimeout(() => {
+                    surpriseBar.classList.remove('show');
+                }, 4000);
+            });
+            
+            closeSurpriseBar.addEventListener('click', () => {
+                surpriseBar.classList.remove('show');
+            });
+
+            // ========== CARRUSEL CON PROGRESO ==========
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('prevArrow');
+            const nextBtn = document.getElementById('nextArrow');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const pauseIcon = document.getElementById('pauseIcon');
+            const dots = document.querySelectorAll('.dot');
+            
+            let currentIndex = 0;
+            let isPlaying = true;
+            let isTransitioning = false;
+            let progressValue = 0;
+            
+            const circumference = 2 * Math.PI * 35;
+            const progressCircle = document.querySelector('.progress-ring-circle');
+            progressCircle.style.strokeDasharray = circumference;
+            progressCircle.style.strokeDashoffset = circumference;
+            
+            let progressInterval;
+            const slideDuration = 8000;
+            
+            function updateProgress(p) {
+                const offset = circumference - (p / 100) * circumference;
+                progressCircle.style.strokeDashoffset = offset;
+            }
+            
+            function resetProgress() {
+                progressValue = 0;
+                updateProgress(0);
+            }
+            
+            function startProgressTimer() {
+                if (progressInterval) clearInterval(progressInterval);
+                const stepTime = 50;
+                const stepIncrement = (stepTime / slideDuration) * 100;
+                
+                progressInterval = setInterval(() => {
+                    if (isPlaying && !isTransitioning) {
+                        progressValue += stepIncrement;
+                        if (progressValue >= 100) {
+                            progressValue = 0;
+                            updateProgress(0);
+                            nextSlide();
+                        } else {
+                            updateProgress(progressValue);
+                        }
+                    }
+                }, stepTime);
+            }
+            
+            function pauseProgressTimer() {
+                if (progressInterval) clearInterval(progressInterval);
+            }
+            
+            function startAutoPlay() {
+                isPlaying = true;
+                pauseIcon.className = 'fas fa-pause';
+                resetProgress();
+                startProgressTimer();
+            }
+            
+            function pauseAutoPlay() {
+                pauseProgressTimer();
+                isPlaying = false;
+                pauseIcon.className = 'fas fa-play';
+            }
+            
+            function updateDots(index) {
+                dots.forEach((dot, i) => {
+                    if (i === index) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                });
+            }
+            
+            function animateSlideIn(slide) {
+                const title = slide.querySelector('.slide-title');
+                const description = slide.querySelector('.slide-description');
+                const line = slide.querySelector('.slide-line');
+                
+                anime.set(title, { opacity: 0, translateY: 60 });
+                anime.set(description, { opacity: 0, translateY: 40 });
+                anime.set(line, { width: 0, opacity: 0 });
+                
+                anime({
+                    targets: title,
+                    opacity: [0, 1],
+                    translateY: [60, 0],
+                    duration: 700,
+                    delay: 200,
+                    easing: 'easeOutElastic(1, 0.6)'
+                });
+                
+                anime({
+                    targets: line,
+                    width: [0, 80],
+                    opacity: [0, 1],
+                    duration: 600,
+                    delay: 400,
+                    easing: 'easeOutQuad'
+                });
+                
+                anime({
+                    targets: description,
+                    opacity: [0, 1],
+                    translateY: [40, 0],
+                    duration: 600,
+                    delay: 550,
+                    easing: 'easeOutQuad'
+                });
+            }
+            
+            function animateSlideOut(slide) {
+                const title = slide.querySelector('.slide-title');
+                const description = slide.querySelector('.slide-description');
+                
+                return new Promise((resolve) => {
+                    anime({
+                        targets: title,
+                        opacity: [1, 0],
+                        translateY: [0, -50],
+                        duration: 400,
+                        easing: 'easeInQuad'
+                    });
+                    anime({
+                        targets: description,
+                        opacity: [1, 0],
+                        translateY: [0, -30],
+                        duration: 350,
+                        easing: 'easeInQuad',
+                        complete: () => resolve()
+                    });
+                });
+            }
+            
+            async function goToSlide(index) {
+                if (isTransitioning) return;
+                if (index === currentIndex) return;
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                
+                isTransitioning = true;
+                
+                const currentSlide = slides[currentIndex];
+                const nextSlide = slides[index];
+                
+                await animateSlideOut(currentSlide);
+                
+                currentSlide.classList.remove('active');
+                nextSlide.classList.add('active');
+                
+                animateSlideIn(nextSlide);
+                updateDots(index);
+                currentIndex = index;
+                
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 800);
+                
+                if (isPlaying) resetProgress();
+            }
+            
+            function nextSlide() {
+                if (!isTransitioning) goToSlide(currentIndex + 1);
+            }
+            
+            function prevSlide() {
+                if (!isTransitioning) goToSlide(currentIndex - 1);
+            }
+            
+            prevBtn.addEventListener('click', () => {
+                if (isPlaying) { pauseAutoPlay(); startAutoPlay(); }
+                prevSlide();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                if (isPlaying) { pauseAutoPlay(); startAutoPlay(); }
+                nextSlide();
+            });
+            
+            pauseBtn.addEventListener('click', () => {
+                if (isPlaying) pauseAutoPlay();
+                else startAutoPlay();
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    if (currentIndex !== index) {
+                        goToSlide(index);
+                        if (isPlaying) { pauseAutoPlay(); startAutoPlay(); }
+                    }
+                });
+            });
+            
+            // Inicializar
+            animateSlideIn(slides[0]);
+            startAutoPlay();
+            
+            // Animaciones de entrada
+            anime({ targets: '.logo-container', opacity: [0, 1], translateX: [-25, 0], duration: 700, easing: 'easeOutQuad' });
+            anime({ targets: '#navLinks li', opacity: [0, 1], translateY: [-15, 0], delay: anime.stagger(80, {start: 300}), duration: 500 });
+            anime({ targets: '.spider-container', scale: [0, 0.45], duration: 800, delay: 400, easing: 'easeOutElastic(1, 0.6)' });
+        });
+    </script>
+</body>
+</html>
